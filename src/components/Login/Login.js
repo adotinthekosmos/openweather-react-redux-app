@@ -8,7 +8,7 @@ import {
   Redirect
 } from "react-router-dom";
 
-import authenticateLogin from "../../actions/authenticateLogin";
+import { authenticateLogin } from "../Login/LoginActions";
 import { connect } from "react-redux";
 class Login extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class Login extends Component {
         this.props.authLogin(true, false);
       }
 
-      console.log(this.props.stateStore.fieldIsEmpty);
+      console.log(this.props.stateStore);
     });
   };
 
@@ -66,7 +66,7 @@ class Login extends Component {
                 <i className="icon ion-ios-person" /> Username:
               </p>
               <input
-                value="khoateamer"
+                // value="khoateamer"
                 type="text"
                 placeholder="user@email.com"
                 ref={input => {
@@ -79,7 +79,7 @@ class Login extends Component {
                 <i className="icon ion-ios-key" /> Password:
               </p>
               <input
-                value="123"
+                // value="123"
                 type="password"
                 placeholder="Enter password"
                 ref={input => {
@@ -126,7 +126,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 const mapStateToProps = state => ({
-  stateStore: state
+  stateStore: state.LoginReducers
 });
 
 export default connect(

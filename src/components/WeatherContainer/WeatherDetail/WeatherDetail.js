@@ -94,7 +94,7 @@ class WeatherDetail extends Component {
 }
 
 const mapStateToProps = state => ({
-  stateStore: state
+  stateStore: state.WeatherReducers
 });
 
 export default connect(mapStateToProps)(WeatherDetail);

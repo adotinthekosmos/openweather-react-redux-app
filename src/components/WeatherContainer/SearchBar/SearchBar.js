@@ -41,7 +41,7 @@ class SearchBar extends Component {
 }
 
 const mapStateToProps = state => ({
-  stateStore: state
+  stateStore: state.WeatherReducers
 });
 
 const mapDispatchToProps = dispatch => {
