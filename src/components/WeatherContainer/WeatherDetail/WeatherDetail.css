@@ -1,0 +1,144 @@
+.weather-detail-container {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
+.widget {
+  display: flex;
+  justify-content: space-around;
+}
+.main-icon {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  background-image: linear-gradient(
+    to right,
+    #f78ca0dc 0%,
+    #f9748fdc 19%,
+    #fd868cdc 60%,
+    #fe9a8bdc 100%
+  );
+}
+.weather-detail-content {
+  padding-right: 25px;
+}
+.detail-container {
+  display: flex;
+  align-items: center;
+  height: 200px;
+}
+.main-icon img {
+  height: 150px;
+  width: 150px;
+}
+.date {
+  text-align: left;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+.location {
+  text-align: left;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 5em;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+.temperature {
+  text-align: left;
+  color: #fff;
+}
+.temperature .current-temp {
+  display: block;
+  font-size: 3em;
+  font-weight: 300;
+  float: left;
+}
+.temperature .highest-temp {
+  display: block;
+  float: left;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  background: #ff416c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff4b2b,
+    #ff416c
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-left: 10px;
+  margin-top: 25px;
+}
+.temperature .lowest-temp {
+  display: block;
+  float: left;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  background: #fc00ff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #00dbde,
+    #fc00ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #00dbde, #fc00ff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-left: 3px;
+  margin-top: 25px;
+}
+.weather-spec {
+  color: #fff;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.weather-spec .spec-box {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weather-spec .spec-box .spec p {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+.weather-spec .spec-box .spec p i {
+  font-size: 2.5em;
+}
+.weather-spec .spec-box .spec .spec-detail {
+  font-weight: 700;
+}
+.weather-spec .spec-box.wind {
+  background: #0048ffdc;
+}
+.weather-spec .spec-box.general {
+  background: #5c2affdc;
+}
+.weather-spec .spec-box.pressure {
+  background: #ffae00dc;
+}
+.weather-spec .spec-box.humidity {
+  background: #28e0aedc;
+}
+.general-icon {
+  margin-bottom: -10px !important;
+}
