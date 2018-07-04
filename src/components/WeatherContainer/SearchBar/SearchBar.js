@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./SearchBar.css";
 import { connect } from "react-redux";
-import submitCurrentWeather from "../../../actions/submitCurrentWeather";
+import { submitCurrentWeather } from "../WeatherActions";
 import axios from "axios";
-import getCurrentWeatherLocationAPI from "./../../../api-config/getCurrentWeatherLocationAPI";
-import submitSearchKeyword from "./../../../actions/submitSearchKeyword";
+import { submitSearchKeyword } from "../WeatherActions";
+import { API_CONFIG } from "./../../../API_CONFIG";
 class SearchBar extends Component {
   componentDidMount() {}
 
@@ -13,16 +13,12 @@ class SearchBar extends Component {
     const keyword = this.getKeyword.value;
     this.props.submitKeyword(keyword);
     if (keyword !== "") {
-      axios
-        .get(
-          `http://api.openweathermap.org/data/2.5/weather?q=${keyword}&APPID=ce7d78e83d78a38a2f88bbb62c3467db`
-        )
-        .then(res => {
-          const currentWeather = res.data;
-          this.props.submitCurrentWeather(currentWeather);
-          console.log(this.props.stateStore.currentWeather);
-          console.log(this.props.stateStore.currentWeather.main.temp);
-        });
+      axios.get(API_CONFIG.getCurrentWeather(keyword)).then(res => {
+        const currentWeather = res.data;
+        this.props.submitCurrentWeather(currentWeather);
+        console.log(this.props.stateStore.currentWeather);
+        console.log(this.props.stateStore.currentWeather.main.temp);
+      });
     }
   };
 

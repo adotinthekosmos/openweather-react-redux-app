@@ -7,7 +7,7 @@ export const submitCurrentWeather = weather => ({
 });
 
 export const submitSearchKeyword = keyword => ({
-  type: Constants.submitSearch,
+  type: WeatherActionTypes.submitSearch,
   payload: {
     keyword: keyword
   }
