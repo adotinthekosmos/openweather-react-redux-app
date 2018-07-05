@@ -12,3 +12,24 @@ export const submitSearchKeyword = keyword => ({
     keyword: keyword
   }
 });
+
+export const submitCities = cities => ({
+  type: WeatherActionTypes.submitCities,
+  payload: {
+    cities: cities
+  }
+});
+
+export const submitCitiesGetStatus = status => ({
+  type: WeatherActionTypes.getCitiesGetStatus,
+  payload: {
+    status: status
+  }
+});
+
+export const submitCurrentCity = city => ({
+  type: WeatherActionTypes.submitCurrentCity,
+  payload: {
+    currentCity: city
+  }
+});

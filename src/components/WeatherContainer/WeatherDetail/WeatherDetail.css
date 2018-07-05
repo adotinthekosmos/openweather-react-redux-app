@@ -3,6 +3,11 @@
   margin: 0 auto;
   margin-top: 16vh;
 }
+
+.city-dropdown {
+  float: left;
+}
+
 .widget {
   display: flex;
   justify-content: space-around;

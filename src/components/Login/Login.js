@@ -37,8 +37,6 @@ class Login extends Component {
       if (valueOfUsername === "khoateamer" && valueOfPassword === "123") {
         this.props.authLogin(true, false);
       }
-
-      console.log(this.props.stateStore);
     });
   };
 
@@ -46,7 +44,7 @@ class Login extends Component {
     const { from } = this.props.location.state || {
       from: { pathname: "/weather" }
     };
-    console.log(this.props.location);
+
     const { redirectToReferrer } = this.props.stateStore;
     if (redirectToReferrer) {
       return <Redirect to={from} />;
@@ -66,7 +64,7 @@ class Login extends Component {
                 <i className="icon ion-ios-person" /> Username:
               </p>
               <input
-                // value="khoateamer"
+                value="khoateamer"
                 type="text"
                 placeholder="user@email.com"
                 ref={input => {
@@ -79,7 +77,7 @@ class Login extends Component {
                 <i className="icon ion-ios-key" /> Password:
               </p>
               <input
-                // value="123"
+                value="123"
                 type="password"
                 placeholder="Enter password"
                 ref={input => {

@@ -3,47 +3,50 @@ const WeatherReducers = (
   state = {
     currentWeather: {
       coord: {
-        lon: -73.99,
-        lat: 40.73
+        lon: "N/A",
+        lat: "N/A"
       },
       weather: [
         {
-          id: 701,
-          main: "Mist",
-          description: "mist",
+          id: "N/A",
+          main: "N/A",
+          description: "N/A",
           icon: "50n"
         }
       ],
-      base: "stations",
+      base: "N/A",
       main: {
-        temp: 297.06,
-        pressure: 1025,
-        humidity: 88,
-        temp_min: 295.15,
-        temp_max: 299.15
+        temp: "N/A",
+        pressure: "N/A",
+        humidity: "N/A",
+        temp_min: "N/A",
+        temp_max: "N/A"
       },
-      visibility: 9656,
+      visibility: "N/A",
       wind: {
-        speed: 1.61,
-        deg: 155.009
+        speed: "N/A",
+        deg: "N/A"
       },
       clouds: {
-        all: 1
+        all: "N/A"
       },
-      dt: 1530687360,
+      dt: "N/A",
       sys: {
-        type: 1,
-        id: 2121,
-        message: 0.0089,
-        country: "US",
-        sunrise: 1530696615,
-        sunset: 1530750626
+        type: "N/A",
+        id: "N/A",
+        message: "N/A",
+        country: "N/A",
+        sunrise: "N/A",
+        sunset: "N/A"
       },
-      id: 5128581,
-      name: "New York",
-      cod: 200
+      id: "N/A",
+      name: "N/A",
+      cod: "N/A"
     },
-    keyword: ""
+    keyword: "",
+    cities: { all: [] },
+    citiesGetStatus: false,
+    currentCity: ""
   },
   action
 ) => {
@@ -61,7 +64,26 @@ const WeatherReducers = (
         keyword: action.payload.keyword
       };
     }
+    case WeatherActionTypes.submitCities: {
+      return {
+        ...state,
+        cities: action.payload.cities
+      };
+    }
 
+    case WeatherActionTypes.getCitiesGetStatus: {
+      return {
+        ...state,
+        citiesGetStatus: action.payload.status
+      };
+    }
+
+    case WeatherActionTypes.submitCurrentCity: {
+      return {
+        ...state,
+        currentCity: action.payload.currentCity
+      };
+    }
     default:
       return state;
   }
